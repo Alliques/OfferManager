@@ -1,0 +1,8 @@
+<div class="suppliers">
+    <h2>Популярные поставщики</h2>
+    <ul>
+        <li *ngFor="let supplier of suppliers">
+            {{ supplier.name }} ({{ supplier.offerCount }} офферов)
+        </li>
+    </ul>
+</div>

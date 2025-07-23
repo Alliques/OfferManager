@@ -1,0 +1,23 @@
+<div class="offers">
+    <h2>Список офферов</h2>
+    <p>Всего записей: {{ total }}</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Марка</th>
+                <th>Модель</th>
+                <th>Поставщик</th>
+                <th>Дата регистрации</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let offer of offers">
+                <td>{{ offer.brand }}</td>
+                <td>{{ offer.model }}</td>
+                <td>{{ offer.supplierName }}</td>
+                <td>{{ offer.registeredAt | date: 'dd.MM.yyyy HH:mm' }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

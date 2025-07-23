@@ -1,0 +1,24 @@
+<div class="search-bar">
+    <input [(ngModel)]="query" (input)="onInput()" placeholder="Поиск по марке, модели или поставщику" />
+
+    <p *ngIf="results.length">Результатов: {{ total }}</p>
+
+    <table *ngIf="results.length" class="offers-table">
+        <thead>
+            <tr>
+                <th>Марка</th>
+                <th>Модель</th>
+                <th>Поставщик</th>
+                <th>Дата</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let offer of results">
+                <td>{{ offer.brand }}</td>
+                <td>{{ offer.model }}</td>
+                <td>{{ offer.supplierName }}</td>
+                <td>{{ offer.registeredAt | date:'dd.MM.yyyy HH:mm' }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

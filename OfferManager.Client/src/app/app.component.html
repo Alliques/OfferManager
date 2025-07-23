@@ -1,0 +1,21 @@
+<div class="container">
+    <h1>Офферы</h1>
+
+    <nav>
+        <button (click)="selectTab('suppliers')">Поставщики</button>
+        <button (click)="selectTab('search')">Поиск</button>
+        <button (click)="selectTab('offers')">Офферы</button>
+    </nav>
+
+    <div *ngIf="activeTab === 'suppliers'">
+        <app-supplier-list></app-supplier-list>
+    </div>
+
+    <div *ngIf="activeTab === 'search'">
+        <app-search-bar></app-search-bar>
+    </div>
+
+    <div *ngIf="activeTab === 'offers'">
+        <app-offer-list [query]="query"></app-offer-list>
+    </div>
+</div>
